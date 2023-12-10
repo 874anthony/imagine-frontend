@@ -1,0 +1,33 @@
+header {
+  padding: 0.5rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  span {
+    color: #0e2248;
+    font-size: 1rem;
+    font-weight: 700;
+  }
+}
+
+.box-shadow-menu {
+  position: relative;
+  padding-left: 1.5em;
+}
+.box-shadow-menu:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 1.25em;
+  height: 0.15em;
+  background: black;
+  box-shadow: 0 0.25em 0 0 black, 0 0.5em 0 0 black;
+}
