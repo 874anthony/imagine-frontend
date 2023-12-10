@@ -1,0 +1,28 @@
+.paginator {
+  display: flex;
+  align-items: center;
+
+  button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &__pages {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-inline: 0.5rem;
+  }
+
+  &__page {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #666666;
+
+    &.active {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+}

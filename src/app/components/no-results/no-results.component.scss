@@ -1,0 +1,12 @@
+.no-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  h2 {
+    color: #333333;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}

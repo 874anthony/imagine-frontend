@@ -3,6 +3,7 @@ header {
   background-color: #fff;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .header-logo {
@@ -30,4 +31,45 @@ header {
   height: 0.15em;
   background: black;
   box-shadow: 0 0.25em 0 0 black, 0 0.5em 0 0 black;
+}
+
+.options {
+  position: absolute;
+  width: 40%;
+  top: 2.2rem;
+  right: 0.4rem;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0 0 0.5rem 0.1rem rgba(0, 0, 0, 0.1);
+
+  &__name {
+    font-size: 1rem;
+    color: #0e2248;
+    font-weight: 700;
+  }
+
+  &__menu {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-size: 0.8rem;
+      color: #0e2248;
+      text-decoration: none;
+    }
+  }
+}
+
+.options.opened {
+  visibility: visible;
+}
+
+.options.closed {
+  visibility: hidden;
 }

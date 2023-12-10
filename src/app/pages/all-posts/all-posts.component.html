@@ -1,0 +1,36 @@
+<main>
+  <h1 class="page-title">All Publications</h1>
+
+  <div class="box-form">
+    <div class="box-form__meta">
+      <label for="title">Words to Search?</label>
+      <span>Showing 2/15 Posts</span>
+    </div>
+
+    <input
+      type="text"
+      id="title"
+      name="title"
+      placeholder="Start typing a word..."
+    />
+  </div>
+
+  <div class="box-form">
+    <div class="box-form__meta">
+      <label for="date">Date Select</label>
+    </div>
+
+    <input type="date" id="date" name="date" placeholder="Select a date" />
+  </div>
+
+  <div class="posts-container">
+    <app-post-overview></app-post-overview>
+
+    <app-post-overview></app-post-overview>
+  </div>
+
+  <app-paginator></app-paginator>
+
+  <!-- TODO: Set this dynamically -->
+  <!-- <app-no-results></app-no-results> -->
+</main>
