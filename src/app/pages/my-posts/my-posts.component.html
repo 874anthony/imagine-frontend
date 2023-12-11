@@ -1,20 +1,35 @@
 <main>
   <h1 class="page-title">My Publications</h1>
 
-  <div class="box-form">
-    <div class="box-form__meta">
-      <label for="date">Date Select</label>
-      <span>Showing 2/15 Posts</span>
-    </div>
+  <form [formGroup]="filterForm" (keyup)="filterPosts($event)">
+    <div class="box-form">
+      <div class="box-form__meta">
+        <label for="date">Date Select</label>
+        <span>Showing {{ showingPages }}/{{ postCount }} Posts</span>
+      </div>
 
-    <input type="date" id="date" name="date" placeholder="Select a date" />
+      <input
+        formControlName="date"
+        type="date"
+        id="date"
+        name="date"
+        placeholder="Select a date"
+      />
+    </div>
+  </form>
+
+  <div class="posts-container">
+    <app-post-overview
+      *ngFor="let post of paginatedPosts"
+      [post]="post"
+    ></app-post-overview>
   </div>
 
-  <app-post-overview></app-post-overview>
-
-  <app-post-overview></app-post-overview>
-
-  <app-paginator></app-paginator>
+  <app-paginator
+    (postToShow)="getStartAndEndPage($event)"
+    *ngIf="showPaginator"
+    [posts]="posts"
+  ></app-paginator>
 
   <!-- TODO: Set this dynamically -->
   <!-- <app-no-results></app-no-results> -->

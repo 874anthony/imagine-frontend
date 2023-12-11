@@ -30,11 +30,13 @@ export class LoginComponent {
     if (this.loginForm.invalid) return;
 
     this.authService.login(email!, password!).subscribe({
-      next: (response: any) => {
-        localStorage.setItem('token', response.access_token);
+      next: ({ name, access_token }: any) => {
+        localStorage.setItem('username', name);
+        localStorage.setItem('token', access_token);
         this.router.navigate(['/dashboard/all-posts']);
       },
-      error: (e) => console.log(e.error.message),
+      // TODO: Implement this
+      error: (e) => console.log(e),
     });
   }
 }

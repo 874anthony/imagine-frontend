@@ -1,14 +1,14 @@
 <div class="post-overview">
   <div class="top-box">
-    <span class="post-title">Your post title</span>
+    <span class="post-title">{{ post.title }}</span>
   </div>
   <div class="bottom-box">
-    <p class="post-description">Create message for share with your friends.</p>
+    <p class="post-description">{{ post.message }}</p>
 
     <div class="post-metadata">
-      <span class="post-date">10:25 am 20/11/23</span>
+      <span class="post-date">{{ post.createdAt | date : "short" }}</span>
 
-      <span class="post-author">Camilo Cifuentes</span>
+      <span class="post-author">{{ post.user.name }}</span>
     </div>
   </div>
 </div>

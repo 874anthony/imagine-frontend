@@ -13,20 +13,35 @@
     </div>
   </div>
 
-  <div class="credentials">
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="credentials">
     <div class="credentials__box">
       <label for="fullName">Full Name</label>
-      <input id="fullName" type="text" placeholder="Anthony Acosta" />
+      <input
+        id="fullName"
+        formControlName="name"
+        type="text"
+        placeholder="Anthony Acosta"
+      />
     </div>
 
     <div class="credentials__box">
       <label for="email">Email</label>
-      <input id="email" type="text" placeholder="example@email.com" />
+      <input
+        id="email"
+        formControlName="email"
+        type="text"
+        placeholder="example@email.com"
+      />
     </div>
 
     <div class="credentials__box">
       <label for="password">Password</label>
-      <input id="password" type="password" placeholder="••••••••" />
+      <input
+        id="password"
+        formControlName="password"
+        type="password"
+        placeholder="••••••••"
+      />
     </div>
 
     <div class="credentials__box">
@@ -34,10 +49,10 @@
       <input id="confirmPassword" type="password" placeholder="••••••••" />
     </div>
 
-    <button class="cta-button">Sign Up</button>
+    <button class="cta-button" type="submit">Sign Up</button>
 
     <p class="cta-redirect">
       Already have an account? <span routerLink="/login">Login</span>
     </p>
-  </div>
+  </form>
 </main>

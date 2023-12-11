@@ -1,24 +1,31 @@
 <main>
   <h1 class="page-title">Create message</h1>
 
-  <div class="box-form">
-    <label for="title">Title messages</label>
-    <input type="text" id="title" name="title" placeholder="Your post title" />
-    <span class="letter-count">20/30</span>
-  </div>
+  <form [formGroup]="createPostForm" (ngSubmit)="onSubmit()">
+    <div class="box-form">
+      <label for="title">Title messages</label>
+      <input
+        type="text"
+        formControlName="title"
+        id="title"
+        name="title"
+        placeholder="Your post title"
+      />
+      <span class="letter-count">20/30</span>
+    </div>
 
-  <div class="box-form">
-    <label for="description">Messages</label>
-    <textarea
-      id="description"
-      name="description"
-      placeholder="Create message for share with your
+    <div class="box-form">
+      <label for="description">Messages</label>
+      <textarea
+        id="description"
+        name="description"
+        formControlName="message"
+        placeholder="Create message for share with your
     friends."
-    ></textarea>
-    <span class="letter-count">100/300</span>
-  </div>
+      ></textarea>
+      <span class="letter-count">100/300</span>
+    </div>
 
-  <button class="cta-share">Share</button>
-
-  <app-post-overview></app-post-overview>
+    <button class="cta-share" type="submit">Share</button>
+  </form>
 </main>

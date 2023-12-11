@@ -1,5 +1,5 @@
 <div class="paginator">
-  <button class="paginator__first-page">
+  <button (click)="goToBeginning()" class="paginator__first-page">
     <svg
       width="13"
       height="16"
@@ -20,7 +20,7 @@
     </svg>
   </button>
 
-  <button class="paginator__previous-page">
+  <button (click)="goBack()" class="paginator__previous-page">
     <svg
       width="8"
       height="16"
@@ -37,12 +37,17 @@
   </button>
 
   <div class="paginator__pages">
-    <span data-page="1" class="paginator__page active">1</span>
-    <span data-page="2" class="paginator__page">2</span>
-    <span data-page="3" class="paginator__page">3</span>
+    <span
+      (click)="goToPage($event)"
+      *ngFor="let numberPage of arrayOfPages"
+      [ngClass]="{ active: numberPage === currentPage }"
+      [attr.data-page]="numberPage"
+      class="paginator__page"
+      >{{ numberPage }}</span
+    >
   </div>
 
-  <button class="paginator__next-page">
+  <button (click)="goForward()" class="paginator__next-page">
     <svg
       width="8"
       height="16"
@@ -57,7 +62,7 @@
     </svg>
   </button>
 
-  <button class="paginator__last-page">
+  <button (click)="goToEnd()" class="paginator__last-page">
     <svg
       width="13"
       height="16"

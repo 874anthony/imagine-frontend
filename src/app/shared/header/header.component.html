@@ -11,14 +11,14 @@
     <span>Easy Media</span>
   </div>
 
-  <div class="box-shadow-menu"></div>
+  <div class="box-shadow-menu" (click)="toggleMenu()"></div>
 
   <div class="options closed">
-    <span class="options__name">Camilo Cifuentes</span>
+    <span class="options__name">{{ username }}</span>
     <hr />
 
     <div class="options__menu">
-      <a href="#">
+      <a routerLink="/dashboard/create-post">
         <svg
           width="11"
           height="11"
@@ -34,7 +34,7 @@
 
         Create Publication</a
       >
-      <a href="#">
+      <a routerLink="/dashboard/my-posts">
         <svg
           width="10"
           height="10"
@@ -50,7 +50,7 @@
 
         My publications</a
       >
-      <a href="#">
+      <a routerLink="/dashboard/all-posts">
         <svg
           width="10"
           height="10"
@@ -66,7 +66,7 @@
 
         See All Publications</a
       >
-      <a href="#" class="active">
+      <a (click)="logout()">
         <svg
           width="10"
           height="10"
